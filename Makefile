@@ -9,17 +9,26 @@
 
 NAME        := pushswap
 CC        := gcc
-FLAGS    := -Wall -Wextra -Werror 
+FLAGS    := -g -Wall -Werror -Wextra
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
 SRCS        :=      main.c \
+                        arg_errors.c \
+                        list.c \
+                        var_struct_creating.c \
+                        start_sort.c \
+                        swap.c \
+                        push.c \
+                        rotate.c \
+                        reverse_rotate.c \
                           printf/ft_printf.c \
                           printf/ft_printhex.c \
                           printf/ft_printnbr.c \
                           printf/ft_printptr.c \
                           printf/libft/ft_atoi.c \
+                          printf/libft/ft_atoi_long.c \
                           printf/libft/ft_bzero.c \
                           printf/libft/ft_calloc.c \
                           printf/libft/ft_isalnum.c \
@@ -42,7 +51,6 @@ SRCS        :=      main.c \
                           printf/libft/ft_memcpy.c \
                           printf/libft/ft_memmove.c \
                           printf/libft/ft_memset.c \
-                          printf/libft/ft_printf.c \
                           printf/libft/ft_putchar_fd.c \
                           printf/libft/ft_putendl_fd.c \
                           printf/libft/ft_putnbr_fd.c \
@@ -66,6 +74,7 @@ SRCS        :=      main.c \
                           printf/libft/ft_substr.c \
                           printf/libft/ft_tolower.c \
                           printf/libft/ft_toupper.c \
+                          printf/libft/ft_strcmp.c \
                           printf/printf_functions.c \
                           
 OBJS        := $(SRCS:.c=.o)

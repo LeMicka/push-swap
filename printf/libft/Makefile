@@ -6,7 +6,7 @@
 #    By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 12:35:49 by mbruzzi           #+#    #+#              #
-#    Updated: 2022/10/17 13:20:21 by mbruzzi          ###   ########.fr        #
+#    Updated: 2023/02/07 10:35:41 by mbruzzi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,8 @@ SRC =  ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
+		ft_strcmp.c \
+		ft_atoi_long.c \
 
 BONUS_SRC = 	ft_lstnew.c \
 	  		ft_lstadd_front.c \

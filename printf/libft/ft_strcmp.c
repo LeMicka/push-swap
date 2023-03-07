@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 11:27:14 by mbruzzi           #+#    #+#             */
-/*   Updated: 2022/12/12 11:58:08 by mbruzzi          ###   ########.fr       */
+/*   Created: 2022/07/14 09:39:02 by mbruzzi           #+#    #+#             */
+/*   Updated: 2023/01/18 11:12:11 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-/**
- * @brief swap function for sa, sb, ss
- * 
- */
+int	ft_strcmp(char *s1, char *s2)
+{
+	int				i;
+	unsigned char	a;
+	unsigned char	b;
 
-/**
- * @brief push function for pa, pb
- * 
- */
-
-/**
- * @brief rotate function for ra, rb, rr
- * 
- */
-
-/**
- * @brief reverse rotate function for rra, rrb, rrr
- * 
- */
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		a = s1[i];
+		b = s2[i];
+		if (a > b)
+			return (1);
+		if (a < b)
+			return (-1);
+		i++;
+	}
+	return (0);
+}
