@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:54:13 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/07 11:32:30 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/08 11:22:35 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	main(int argc, char **argv)
 	t_bounds		*stack_b;
 	int				i;
 	t_stack			*curent;
-	//t_stack				*reverse;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -77,13 +76,12 @@ int	main(int argc, char **argv)
 	}
 	variables->len = array_length(variables->split);
 	stack_a = create_list(variables->split, variables->len);
-	curent = stack_a->head;
 	sorting(variables, stack_a, stack_b);
-	curent = stack_a->last;
+	curent = stack_a->head;
 	while (curent)
 	{
 		ft_printf("%i\n", curent->data);
-		curent = curent->prev;
+		curent = curent->next;
 	}
 	ft_free_list(stack_a);
 	ft_free_list(stack_b);

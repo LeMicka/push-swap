@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:38:40 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/07 10:50:47 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/08 11:31:21 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,23 @@ void	push_normal(t_bounds *src, t_bounds *dest)
 	t_stack	*tmp;
 
 	if (src->head == src->last)
+	{
 		src->last = NULL;
-	tmp = src->head->next;
-	src->head->next = dest->head;
-	dest->head->prev = src->head;
-	dest->head = src->head;
-	src->head = tmp;
-	src->head->prev = NULL;
+		tmp = src->head->next;
+		src->head->next = dest->head;
+		dest->head->prev = src->head;
+		dest->head = src->head;
+		src->head = tmp;
+	}
+	else
+	{
+		tmp = src->head->next;
+		src->head->next = dest->head;
+		dest->head->prev = src->head;
+		dest->head = src->head;
+		src->head = tmp;
+		src->head->prev = NULL;
+	}
 }
 
 void	push_1element(t_bounds *src, t_bounds *dest)

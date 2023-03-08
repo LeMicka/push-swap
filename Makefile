@@ -19,6 +19,7 @@ SRCS        :=      main.c \
                         list.c \
                         var_struct_creating.c \
                         start_sort.c \
+                        sort_5.c \
                         swap.c \
                         push.c \
                         rotate.c \

@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:50:35 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/02/20 10:22:51 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/08 11:34:18 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,16 @@
 static void	swap(t_stack *stack)
 {
 	int	tmp;
+	int	tmp_order;
 
 	if (stack != NULL && stack->next != NULL)
 	{
 		tmp = stack->data;
+		tmp_order = stack->order;
 		stack->data = stack->next->data;
+		stack->order = stack->next->order;
 		stack->next->data = tmp;
+		stack->next->order = tmp_order;
 	}
 }
 

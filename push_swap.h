@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 14:11:11 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/07 11:26:19 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/08 12:43:10 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int				fill_arg_type(int argc);
 t_bounds		*create_list(char **split, int len);
 
 void			sorting(t_var *variables, t_bounds *stack_a, t_bounds *stack_b);
+void			sort_3(t_bounds *stack_a);
+void			sort_5(t_bounds *stack_a, t_bounds *stack_b);
 
 void			make_sa(t_stack *stack_a);
 void			make_sb(t_stack *stack_b);
