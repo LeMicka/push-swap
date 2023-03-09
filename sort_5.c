@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:39:30 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/08 12:42:41 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/09 10:34:29 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	put_last(t_bounds *stack_a, t_bounds *stack_b)
 	while (stack_b->head != NULL)
 	{
 		actions(stack_a, stack_b);
+		if (stack_b->head->order == 1)
+			make_pa(stack_a, stack_b);
 	}
 }
 

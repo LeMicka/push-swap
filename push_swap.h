@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 14:11:11 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/08 12:43:10 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/09 12:58:39 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_var
 	char	**split;
 	int		len;
 	int		arg_type;
+	int		parts;
 }	t_var;
 
 typedef struct s_bounds
@@ -69,6 +70,8 @@ t_bounds		*create_list(char **split, int len);
 void			sorting(t_var *variables, t_bounds *stack_a, t_bounds *stack_b);
 void			sort_3(t_bounds *stack_a);
 void			sort_5(t_bounds *stack_a, t_bounds *stack_b);
+
+void			sort_100(t_var *vars, t_bounds *stack_a, t_bounds *stack_b);
 
 void			make_sa(t_stack *stack_a);
 void			make_sb(t_stack *stack_b);

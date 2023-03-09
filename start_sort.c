@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:41:12 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/08 12:40:28 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/09 14:11:50 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,17 +57,39 @@ void	sort_3(t_bounds *stack_a)
 	}
 }
 
+int	already_sorted(t_bounds *stack_a)
+{
+	t_stack	*curent;
+
+	curent = stack_a->head;
+	while (curent->next != NULL)
+	{
+		if (curent->order > curent->next->order)
+			return (0);
+		curent = curent->next;
+	}
+	return (1);
+}
+
 void	sorting(t_var *variables, t_bounds *stack_a, t_bounds *stack_b)
 {
-	if (variables->len == 2)
+	if (already_sorted(stack_a) == 0)
 	{
-		if (stack_a->head->order > stack_a->head->next->order)
+		if (variables->len == 2)
 		{
-			make_sa(stack_a->head);
+			if (stack_a->head->order > stack_a->head->next->order)
+			{
+				make_sa(stack_a->head);
+			}
 		}
+		else if (variables->len == 3)
+			sort_3(stack_a);
+		else if (variables->len <= 5)
+			sort_5(stack_a, stack_b);
+		else if (variables->len <= 100)
+		{
+			variables->parts = 3;
+			sort_100(variables, stack_a, stack_b);
+		}	
 	}
-	else if (variables->len == 3)
-		sort_3(stack_a);
-	else if (variables->len == 5)
-		sort_5(stack_a, stack_b);
 }
