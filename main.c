@@ -6,14 +6,14 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:54:13 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/09 14:48:35 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/28 09:35:39 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	ft_leaks(void){
-	system("leaks pushswap");
+	system("leaks push_swap");
 }
 
 void	ft_free(t_var *variables)
@@ -50,14 +50,12 @@ void	ft_free_list(t_bounds *stack)
 	free(stack);
 }
 
-
 int	main(int argc, char **argv)
 {	
 	t_var			*variables;
 	t_bounds		*stack_a;
 	t_bounds		*stack_b;
 	int				i;
-	t_stack			*curent;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -77,18 +75,12 @@ int	main(int argc, char **argv)
 		}
 		variables->len = array_length(variables->split);
 		stack_a = create_list(variables->split, variables->len);
+		variables->in_a = variables->len;
 		sorting(variables, stack_a, stack_b);
-		curent = stack_b->head;
-		while (curent != NULL)
-		{
-			ft_printf("%i\n", curent->order);
-			curent = curent->next;
-		}
 		ft_free_list(stack_a);
-		if (variables->len > 3)
-			ft_free_list(stack_b);
+		ft_free_list(stack_b);
 		ft_free(variables);
-		//atexit(ft_leaks);
+		atexit(ft_leaks);
 	}
 	return (0);
 }

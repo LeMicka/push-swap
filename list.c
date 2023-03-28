@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:34:00 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/07 10:49:19 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/28 09:34:32 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,3 @@ t_bounds	*create_list(char **split, int len)
 	ft_add_order(a, split, len);
 	return (a);
 }
-

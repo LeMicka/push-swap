@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:02:16 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/07 09:31:57 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/28 09:34:20 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	are_ints(char **split)
 
 int	number_too_big(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (split[i])

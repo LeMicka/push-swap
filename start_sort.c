@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:41:12 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/09 14:11:50 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/28 09:32:24 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,10 @@ void	sorting(t_var *variables, t_bounds *stack_a, t_bounds *stack_b)
 			sort_5(stack_a, stack_b);
 		else if (variables->len <= 100)
 		{
-			variables->parts = 3;
-			sort_100(variables, stack_a, stack_b);
-		}	
+			//variables->parts = 3;
+			sort_bigs(variables, stack_a, stack_b);
+		}
+		else if (variables->len > 100)
+			sort_bigs(variables, stack_a, stack_b);
 	}
 }

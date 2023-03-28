@@ -6,7 +6,7 @@
 /*   By: mbruzzi <mbruzzi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:55:00 by mbruzzi           #+#    #+#             */
-/*   Updated: 2023/03/09 14:11:15 by mbruzzi          ###   ########.fr       */
+/*   Updated: 2023/03/27 09:35:53 by mbruzzi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ t_var	*struct_init(t_var *variables)
 	variables->len = 0;
 	variables->arg_type = 0;
 	variables->parts = 0;
+	variables->in_a = 0;
+	variables->in_b = 0;
 	return (variables);
 }
